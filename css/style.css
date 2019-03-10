@@ -1,0 +1,208 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 16px "Open Sans", sans-serif;
+  /* HEADER */
+}
+body .wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body .wrapper > * {
+  padding: 1em;
+}
+body .page-header {
+  background-color: #52ce90;
+}
+body button {
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+body ul {
+  list-style: none;
+}
+body a {
+  text-decoration: none;
+}
+
+.page-header .cta-contact {
+  background-color: #FF8B66;
+}
+.page-header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page-header .navbar .nav-links {
+  display: flex;
+  margin-right: 100px;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-left: 40px;
+}
+.page-header ul {
+  display: flex;
+  order: 1;
+  width: 100%;
+  margin-top: 15px;
+}
+.page-header li {
+  margin: 0;
+}
+.page-header a {
+  margin: 50px;
+}
+.page-header a,
+.page-header .logo {
+  color: white;
+}
+.page-header img {
+  height: 80px;
+  width: 50px;
+}
+.page-header ul li:not(:last-child) {
+  padding-right: 15px;
+}
+.page-header .cta-contact {
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 5px 18px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.page-main .card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+  grid-gap: 1rem;
+  padding: 1rem;
+  margin-top: 2em;
+}
+.page-main .card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 1px 5px #555;
+  background-color: #dacfcf;
+  padding: 1rem;
+  width: 300px;
+}
+.page-main .card--odd {
+  background: #52ce90;
+  color: white;
+}
+.page-main .card--odd button {
+  color: white;
+  border: 3px solid white;
+}
+.page-main .card--odd p {
+  color: black;
+}
+.page-main .card__header {
+  text-align: center;
+  font-size: 2rem;
+  border-bottom: 5px solid #00B2ED;
+  padding: 1rem;
+  background-image: radial-gradient(circle closest-side, #52ce90 61%, transparent 62%), radial-gradient(circle closest-side, transparent 85%, white 86%, white 99%, transparent 100%), radial-gradient(circle closest-side, transparent 85%, white 86%, white 99%, transparent 100%);
+  background-size: 100px 100px, 100px 50px, 50px 100px;
+  background-position: 0px 0px;
+}
+.page-main .card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  background-image: url("../img/2.jpg");
+}
+.page-main .card__time {
+  padding: 1rem;
+  font-size: 0.6rem;
+  font-weight: 100;
+  font-style: italic;
+  color: #987a7a;
+}
+.page-main .card__button {
+  border: 3px solid black;
+  padding: 1rem;
+}
+.page-main .page-about {
+  padding: 2em;
+  background-color: #52ce90;
+  background-image: radial-gradient(circle closest-side, #52ce90 61%, transparent 62%), radial-gradient(circle closest-side, transparent 85%, white 86%, white 99%, transparent 100%), radial-gradient(circle closest-side, transparent 85%, white 86%, white 99%, transparent 100%);
+  background-size: 100px 100px, 100px 50px, 50px 100px;
+  background-position: 0px 0px;
+}
+.page-main .page-about__title {
+  padding: 1em;
+  color: white;
+  text-align: center;
+  background-color: #333;
+}
+.page-main .page-about__text {
+  background-color: #333;
+  color: white;
+  padding: 1em;
+}
+
+.page-footer {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+.page-footer__footer {
+  font-size: 1rem;
+}
+
+article:first-of-type {
+  order: 1;
+  background-color: #dacfcf !important;
+  color: black !important;
+  display: none;
+}
+article:first-of-type button {
+  color: black !important;
+  border: 3px solid black !important;
+}
+article:first-of-type p {
+  color: black !important;
+}
+article:first-of-type__time {
+  color: black !important;
+}
+
+.heading {
+  color: white;
+}
+.heading a {
+  color: white;
+  text-decoration: underline;
+}
+.heading-container {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+.heading-text {
+  padding: 2em;
+  width: 100%;
+  background-color: #333;
+  height: 300px;
+}
+.heading-image {
+  width: 100%;
+  background-color: #777;
+  background-image: url("../img/2.jpg");
+  background-position: 60%;
+  background-size: 100% 100%;
+  height: 300px;
+}
+
+/*# sourceMappingURL=style.css.map */
