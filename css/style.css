@@ -1,4 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+.background, .page-header .navbar, body {
+  --c: rgba(255, 255, 255, 0.7);
+  --t: transparent;
+  background-image: repeating-linear-gradient(45deg, var(--c) 0, var(--c) 20px, var(--t) 20px, var(--t) 32px, var(--c) 32px, var(--c) 44px, var(--t) 44px, var(--t) 56px, var(--c) 56px, var(--c) 68px, var(--t) 68px, var(--t) 80px, var(--c) 0), repeating-linear-gradient(-45deg, var(--c) 0, var(--c) 20px, var(--t) 20px, var(--t) 32px, var(--c) 32px, var(--c) 44px, var(--t) 44px, var(--t) 56px, var(--c) 56px, var(--c) 68px, var(--t) 68px, var(--t) 80px, var(--c) 0), linear-gradient(to bottom right, #52ce90, #FF8B66);
+}
+
+.background2, .page-main .card__header {
+  background-image: radial-gradient(circle closest-side, #52ce90 61%, transparent 62%), radial-gradient(circle closest-side, transparent 85%, white 86%, white 99%, transparent 100%), radial-gradient(circle closest-side, transparent 85%, white 86%, white 99%, transparent 100%);
+  background-size: 100px 100px, 100px 50px, 50px 100px;
+  background-position: 0px 0px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -6,10 +18,7 @@
 }
 
 body {
-  font: 16px "Open Sans", sans-serif;
-  --c: rgba(255, 255, 255, 0.7);
-  --t: transparent;
-  background-image: repeating-linear-gradient(45deg, var(--c) 0, var(--c) 20px, var(--t) 20px, var(--t) 32px, var(--c) 32px, var(--c) 44px, var(--t) 44px, var(--t) 56px, var(--c) 56px, var(--c) 68px, var(--t) 68px, var(--t) 80px, var(--c) 0), repeating-linear-gradient(-45deg, var(--c) 0, var(--c) 20px, var(--t) 20px, var(--t) 32px, var(--c) 32px, var(--c) 44px, var(--t) 44px, var(--t) 56px, var(--c) 56px, var(--c) 68px, var(--t) 68px, var(--t) 80px, var(--c) 0), linear-gradient(to bottom right, #52ce90, #FF8B66);
+  font: 16px "Montserrat", sans-serif;
   /* HEADER */
 }
 body .wrapper {
@@ -18,7 +27,7 @@ body .wrapper {
   min-height: 100vh;
 }
 body .page-header {
-  background-color: #52ce90;
+  background-color: #dacfcf;
 }
 body button {
   background: none;
@@ -58,15 +67,19 @@ body a {
 }
 .page-header a {
   margin: 50px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 .page-header a:hover {
   padding: 1em;
   background: #FF8B66;
   color: #ffffff;
 }
-.page-header a,
 .page-header .logo {
-  color: white;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: white;
 }
 .page-header img {
   height: 80px;
@@ -103,9 +116,6 @@ body a {
   font-size: 2rem;
   border-bottom: 5px solid #125CE0;
   padding: 1rem;
-  background-image: radial-gradient(circle closest-side, #52ce90 61%, transparent 62%), radial-gradient(circle closest-side, transparent 85%, white 86%, white 99%, transparent 100%), radial-gradient(circle closest-side, transparent 85%, white 86%, white 99%, transparent 100%);
-  background-size: 100px 100px, 100px 50px, 50px 100px;
-  background-position: 0px 0px;
 }
 .page-main .card__body {
   display: flex;
@@ -147,10 +157,10 @@ body a {
   padding: 1em;
   color: white;
   text-align: center;
-  background-color: #333;
+  background-color: #987a7a;
 }
 .page-main .page-about__text {
-  background-color: #333;
+  background-color: #987a7a;
   color: white;
   padding: 1em;
 }
@@ -181,7 +191,7 @@ body a {
 .heading-text {
   padding: 2em;
   width: 100%;
-  background-color: #333;
+  background-color: #987a7a;
   height: 300px;
 }
 .heading-image {
@@ -199,7 +209,7 @@ body a {
 }
 .form-container {
   background: #dacfcf;
-  border: solid 3px #FF8B66;
+  border: solid 3px #125CE0;
   margin: auto;
   position: relative;
   padding: 1em;
@@ -227,8 +237,8 @@ body a {
 .form textarea {
   background: none;
   border: none;
-  border-bottom: solid 2px #52ce90;
-  color: #52ce90;
+  border-bottom: solid 2px #125CE0;
+  color: #125CE0;
   font-size: 1em;
   font-weight: 400;
   letter-spacing: 1px;
@@ -256,9 +266,9 @@ body a {
 
 .page-footer {
   margin-top: 2em;
-  background-color: #333;
+  background-color: #dacfcf;
   padding: 2em;
-  color: white;
+  color: black;
 }
 
 /*# sourceMappingURL=style.css.map */

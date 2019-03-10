@@ -6,6 +6,27 @@ $color--gray: #dacfcf;
 $color--darkgray: #987a7a;
 $color--blue: #125CE0;
 
+.background {
+    --c: rgba(255, 255, 255, 0.7);
+    --t: transparent;
+    background-image: repeating-linear-gradient(45deg, var(--c) 0, var(--c) 20px, var(--t) 20px, var(--t) 32px, var(--c) 32px, var(--c) 44px, var(--t) 44px, var(--t) 56px, var(--c) 56px, var(--c) 68px, var(--t) 68px, var(--t) 80px, var(--c) 0),
+        repeating-linear-gradient(-45deg, var(--c) 0, var(--c) 20px, var(--t) 20px, var(--t) 32px, var(--c) 32px, var(--c) 44px, var(--t) 44px, var(--t) 56px, var(--c) 56px, var(--c) 68px, var(--t) 68px, var(--t) 80px, var(--c) 0),
+        linear-gradient(to bottom right, $color--primary, $color--secondary);
+}
+
+.background2 {
+    background-image: radial-gradient(circle closest-side, $color--primary 61%, transparent 62%),
+        radial-gradient(circle closest-side, transparent 85%, rgba(255, 255, 255, 1) 86%, rgba(255, 255, 255, 1) 99%, transparent 100%),
+        radial-gradient(circle closest-side, transparent 85%, rgba(255, 255, 255, 1) 86%, rgba(255, 255, 255, 1) 99%, transparent 100%);
+    background-size: 100px 100px,
+        100px 50px,
+        50px 100px;
+    background-position: 0px 0px;
+}
+
+
+
+
 * {
     padding: 0;
     margin: 0;
@@ -13,15 +34,12 @@ $color--blue: #125CE0;
 }
 
 body {
-    font: 16px "Open Sans", sans-serif;
+    font: 16px "Montserrat",
+        sans-serif;
     //background-color: #fffafa;
     //$color--primary: $color--primary;
-    --c: rgba(255, 255, 255, 0.7);
-    --t: transparent;
-    background-image: repeating-linear-gradient(45deg, var(--c) 0, var(--c) 20px, var(--t) 20px, var(--t) 32px, var(--c) 32px, var(--c) 44px, var(--t) 44px, var(--t) 56px, var(--c) 56px, var(--c) 68px, var(--t) 68px, var(--t) 80px, var(--c) 0),
-        repeating-linear-gradient(-45deg, var(--c) 0, var(--c) 20px, var(--t) 20px, var(--t) 32px, var(--c) 32px, var(--c) 44px, var(--t) 44px, var(--t) 56px, var(--c) 56px, var(--c) 68px, var(--t) 68px, var(--t) 80px, var(--c) 0),
-        linear-gradient(to bottom right, $color--primary, $color--secondary);
 
+    @extend .background;
 
     .wrapper {
         display: flex;
@@ -32,7 +50,7 @@ body {
 
     /* HEADER */
     .page-header {
-        background-color: $color--primary;
+        background-color: $color--gray;
     }
 
     button {
@@ -61,6 +79,8 @@ body {
         justify-content: space-between;
         align-items: center;
 
+        @extend .background;
+
         .nav-links {
             display: flex;
             margin-right: 100px;
@@ -79,10 +99,14 @@ body {
 
     li {
         margin: 0;
+
+
     }
 
     a {
         margin: 50px;
+        text-transform: uppercase;
+        font-weight: 700;
 
         &:hover {
             padding: 1em;
@@ -91,9 +115,11 @@ body {
         }
     }
 
-    a,
     .logo {
-        color: white;
+        color: black;
+        text-transform: uppercase;
+        font-weight: 700;
+        background-color: white;
     }
 
     img {
@@ -133,19 +159,13 @@ body {
         padding: 1rem;
         width: 300px;
 
-
         &__header {
             text-align: center;
             font-size: 2rem;
             border-bottom: 5px solid $color--blue;
             padding: 1rem;
-            background-image: radial-gradient(circle closest-side, $color--primary 61%, transparent 62%),
-                radial-gradient(circle closest-side, transparent 85%, rgba(255, 255, 255, 1) 86%, rgba(255, 255, 255, 1) 99%, transparent 100%),
-                radial-gradient(circle closest-side, transparent 85%, rgba(255, 255, 255, 1) 86%, rgba(255, 255, 255, 1) 99%, transparent 100%);
-            background-size: 100px 100px,
-                100px 50px,
-                50px 100px;
-            background-position: 0px 0px;
+
+            @extend .background2;
         }
 
         &__body {
@@ -198,11 +218,11 @@ body {
             padding: 1em;
             color: white;
             text-align: center;
-            background-color: #333;
+            background-color: $color--darkgray;
         }
 
         &__text {
-            background-color: #333;
+            background-color: $color--darkgray;
             color: white;
             padding: 1em;
         }
@@ -240,7 +260,7 @@ body {
     &-text {
         padding: 2em;
         width: 100%;
-        background-color: #333;
+        background-color: $color--darkgray;
         height: 300px;
     }
 
@@ -267,7 +287,7 @@ body {
 
     &-container {
         background: $color--gray;
-        border: solid 3px $color--secondary;
+        border: solid 3px $color--blue;
         margin: auto;
         position: relative;
         padding: 1em;
@@ -298,8 +318,8 @@ body {
     textarea {
         background: none;
         border: none;
-        border-bottom: solid 2px $color--primary;
-        color: $color--primary;
+        border-bottom: solid 2px $color--blue;
+        color: $color--blue;
         font-size: 1.000em;
         font-weight: 400;
         letter-spacing: 1px;
@@ -331,7 +351,7 @@ body {
 
 .page-footer {
     margin-top: 2em;
-    background-color: #333;
+    background-color: $color--gray;
     padding: 2em;
-    color: white;
+    color: black;
 }
