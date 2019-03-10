@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 * {
   padding: 0;
   margin: 0;
@@ -6,15 +7,15 @@
 
 body {
   font: 16px "Open Sans", sans-serif;
+  --c: rgba(255, 255, 255, 0.7);
+  --t: transparent;
+  background-image: repeating-linear-gradient(45deg, var(--c) 0, var(--c) 20px, var(--t) 20px, var(--t) 32px, var(--c) 32px, var(--c) 44px, var(--t) 44px, var(--t) 56px, var(--c) 56px, var(--c) 68px, var(--t) 68px, var(--t) 80px, var(--c) 0), repeating-linear-gradient(-45deg, var(--c) 0, var(--c) 20px, var(--t) 20px, var(--t) 32px, var(--c) 32px, var(--c) 44px, var(--t) 44px, var(--t) 56px, var(--c) 56px, var(--c) 68px, var(--t) 68px, var(--t) 80px, var(--c) 0), linear-gradient(to bottom right, #52ce90, #FF8B66);
   /* HEADER */
 }
 body .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-body .wrapper > * {
-  padding: 1em;
 }
 body .page-header {
   background-color: #52ce90;
@@ -58,13 +59,18 @@ body a {
 .page-header a {
   margin: 50px;
 }
+.page-header a:hover {
+  padding: 1em;
+  background: #FF8B66;
+  color: #ffffff;
+}
 .page-header a,
 .page-header .logo {
   color: white;
 }
 .page-header img {
   height: 80px;
-  width: 50px;
+  width: 80px;
 }
 .page-header ul li:not(:last-child) {
   padding-right: 15px;
@@ -92,21 +98,10 @@ body a {
   padding: 1rem;
   width: 300px;
 }
-.page-main .card--odd {
-  background: #52ce90;
-  color: white;
-}
-.page-main .card--odd button {
-  color: white;
-  border: 3px solid white;
-}
-.page-main .card--odd p {
-  color: black;
-}
 .page-main .card__header {
   text-align: center;
   font-size: 2rem;
-  border-bottom: 5px solid #00B2ED;
+  border-bottom: 5px solid #125CE0;
   padding: 1rem;
   background-image: radial-gradient(circle closest-side, #52ce90 61%, transparent 62%), radial-gradient(circle closest-side, transparent 85%, white 86%, white 99%, transparent 100%), radial-gradient(circle closest-side, transparent 85%, white 86%, white 99%, transparent 100%);
   background-size: 100px 100px, 100px 50px, 50px 100px;
@@ -120,6 +115,9 @@ body a {
   padding: 15px 0;
   background-image: url("../img/2.jpg");
 }
+.page-main .card__text {
+  color: white;
+}
 .page-main .card__time {
   padding: 1rem;
   font-size: 0.6rem;
@@ -128,8 +126,15 @@ body a {
   color: #987a7a;
 }
 .page-main .card__button {
-  border: 3px solid black;
+  color: white;
+  text-transform: uppercase;
+  border: 3px solid #52ce90;
   padding: 1rem;
+  background-color: #52ce90;
+}
+.page-main .card__button:hover {
+  background: #FF8B66;
+  color: #ffffff;
 }
 .page-main .page-about {
   padding: 2em;
@@ -160,23 +165,6 @@ body a {
   font-size: 1rem;
 }
 
-article:first-of-type {
-  order: 1;
-  background-color: #dacfcf !important;
-  color: black !important;
-  display: none;
-}
-article:first-of-type button {
-  color: black !important;
-  border: 3px solid black !important;
-}
-article:first-of-type p {
-  color: black !important;
-}
-article:first-of-type__time {
-  color: black !important;
-}
-
 .heading {
   color: white;
 }
@@ -203,6 +191,74 @@ article:first-of-type__time {
   background-position: 60%;
   background-size: 100% 100%;
   height: 300px;
+}
+
+.form {
+  display: flex;
+  margin-top: 2em;
+}
+.form-container {
+  background: #dacfcf;
+  border: solid 3px #FF8B66;
+  margin: auto;
+  position: relative;
+  padding: 1em;
+}
+.form h1 {
+  color: #987a7a;
+  padding: 1em;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.form button,
+.form input,
+.form select,
+.form textarea {
+  color: #52ce90;
+  font: inherit;
+  margin: 0;
+}
+.form input[type=text],
+.form [type=email],
+.form select,
+.form textarea {
+  background: none;
+  border: none;
+  border-bottom: solid 2px #52ce90;
+  color: #52ce90;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0em 0 1.8em 0;
+  padding: 0 0 0.8em 0;
+  text-transform: uppercase;
+  width: 100%;
+}
+.form #form_button {
+  display: flex;
+  background: none;
+  border: solid 2px #52ce90;
+  cursor: pointer;
+  font-size: 0.8em;
+  font-weight: bold;
+  outline: none;
+  padding: 1em;
+  text-transform: uppercase;
+  margin-left: auto;
+}
+.form #form_button:hover {
+  background: #FF8B66;
+  color: #ffffff;
+}
+
+.page-footer {
+  margin-top: 2em;
+  background-color: #333;
+  padding: 2em;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

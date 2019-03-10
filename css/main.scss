@@ -1,8 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
 $color--primary: #52ce90;
 $color--secondary: #FF8B66;
 $color--gray: #dacfcf;
 $color--darkgray: #987a7a;
-$color--blue: #00B2ED;
+$color--blue: #125CE0;
 
 * {
     padding: 0;
@@ -12,6 +14,14 @@ $color--blue: #00B2ED;
 
 body {
     font: 16px "Open Sans", sans-serif;
+    //background-color: #fffafa;
+    //$color--primary: $color--primary;
+    --c: rgba(255, 255, 255, 0.7);
+    --t: transparent;
+    background-image: repeating-linear-gradient(45deg, var(--c) 0, var(--c) 20px, var(--t) 20px, var(--t) 32px, var(--c) 32px, var(--c) 44px, var(--t) 44px, var(--t) 56px, var(--c) 56px, var(--c) 68px, var(--t) 68px, var(--t) 80px, var(--c) 0),
+        repeating-linear-gradient(-45deg, var(--c) 0, var(--c) 20px, var(--t) 20px, var(--t) 32px, var(--c) 32px, var(--c) 44px, var(--t) 44px, var(--t) 56px, var(--c) 56px, var(--c) 68px, var(--t) 68px, var(--t) 80px, var(--c) 0),
+        linear-gradient(to bottom right, $color--primary, $color--secondary);
+
 
     .wrapper {
         display: flex;
@@ -19,9 +29,6 @@ body {
         min-height: 100vh;
     }
 
-    .wrapper>* {
-        padding: 1em;
-    }
 
     /* HEADER */
     .page-header {
@@ -76,6 +83,12 @@ body {
 
     a {
         margin: 50px;
+
+        &:hover {
+            padding: 1em;
+            background: $color--secondary;
+            color: #ffffff;
+        }
     }
 
     a,
@@ -85,7 +98,7 @@ body {
 
     img {
         height: 80px;
-        width: 50px;
+        width: 80px;
     }
 
     ul li:not(:last-child) {
@@ -120,19 +133,6 @@ body {
         padding: 1rem;
         width: 300px;
 
-        &--odd {
-            background: $color--primary;
-            color: white;
-
-            button {
-                color: white;
-                border: 3px solid white;
-            }
-
-            p {
-                color: black;
-            }
-        }
 
         &__header {
             text-align: center;
@@ -157,7 +157,9 @@ body {
             background-image: url("../img/2.jpg");
         }
 
-        &__text {}
+        &__text {
+            color: white;
+        }
 
         &__time {
             padding: 1rem;
@@ -169,8 +171,16 @@ body {
 
 
         &__button {
-            border: 3px solid black;
+            color: white;
+            text-transform: uppercase;
+            border: 3px solid $color--primary;
             padding: 1rem;
+            background-color: $color--primary;
+
+            &:hover {
+                background: $color--secondary;
+                color: #ffffff;
+            }
         }
     }
 
@@ -211,29 +221,6 @@ body {
     }
 }
 
-// fix wierd bug with cloned nodes
-article:first-of-type {
-    order: 1;
-    background-color: #dacfcf !important;
-    color: black !important;
-
-    button {
-        color: black !important;
-        border: 3px solid black !important;
-    }
-
-    p {
-        color: black !important;
-    }
-
-    &__time {
-        color: black !important;
-    }
-
-    display:none;
-}
-
-
 .heading {
 
     color: white;
@@ -270,4 +257,81 @@ article:first-of-type {
         background-size: 100% 100%;
         height: 300px;
     }
+}
+
+
+
+.form {
+    display: flex;
+    margin-top: 2em;
+
+    &-container {
+        background: $color--gray;
+        border: solid 3px $color--secondary;
+        margin: auto;
+        position: relative;
+        padding: 1em;
+    }
+
+    h1 {
+        color: $color--darkgray;
+        padding: 1em;
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: 7px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+        color: $color--primary;
+        font: inherit;
+        margin: 0;
+    }
+
+    input[type='text'],
+    [type='email'],
+    select,
+    textarea {
+        background: none;
+        border: none;
+        border-bottom: solid 2px $color--primary;
+        color: $color--primary;
+        font-size: 1.000em;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin: 0em 0 1.8em 0;
+        padding: 0 0 0.8em 0;
+        text-transform: uppercase;
+        width: 100%;
+    }
+
+    #form_button {
+        display: flex;
+        background: none;
+        border: solid 2px $color--primary;
+        cursor: pointer;
+        font-size: 0.8em;
+        font-weight: bold;
+        outline: none;
+        padding: 1em;
+        text-transform: uppercase;
+        margin-left: auto;
+
+        &:hover {
+            background: $color--secondary;
+            color: #ffffff;
+        }
+    }
+}
+
+
+.page-footer {
+    margin-top: 2em;
+    background-color: #333;
+    padding: 2em;
+    color: white;
 }
